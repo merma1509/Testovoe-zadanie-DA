@@ -4,7 +4,7 @@ def prime_factors(n):
     
     Алгоритм пробного деления с оптимизацией:
     1. Сначала делим на 2, пока делится
-    2. Затем проверяем нечетные делители до √n
+    2. Затем проверяем нечетные делители до sqrt(n)
     3. Если остаток > 1, он тоже простой множитель
     
     Args:
@@ -13,7 +13,7 @@ def prime_factors(n):
     Returns:
         list: Список простых множителей в порядке возрастания
         
-    Time Complexity: O(√n), где n - входное число
+    Time Complexity: O(sqrt(n)), где n - входное число
     Space Complexity: O(log n) - максимальное количество множителей
     """
     if n <= 1:
@@ -26,7 +26,7 @@ def prime_factors(n):
         factors.append(2)
         n //= 2
     
-    # Проверяем нечетные делители от 3 до √n
+    # Проверяем нечетные делители от 3 до sqrt(n)
     divisor = 3
     while divisor * divisor <= n:
         while n % divisor == 0:
@@ -60,7 +60,7 @@ def prime_factors_with_sieve(n):
     """
     Факторизация с использованием решета Эратосфена для чисел < 1000.
     """
-    # Создаем решето до √n
+    # Создаем решето до sqrt(n)
     limit = int(n ** 0.5) + 1
     sieve = [True] * (limit + 1)
     sieve[0] = sieve[1] = False

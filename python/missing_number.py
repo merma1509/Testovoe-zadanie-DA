@@ -46,11 +46,11 @@ def missing_number_xor(nums):
 if __name__ == "__main__":
     # Пример из задания
     nums = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11]
-    print(missing_number(nums))      # 7
+    print(missing_number(nums))       # 7
     print(missing_number_xor(nums))   # 7
     
     # Дополнительные тесты
     print(missing_number([2, 3, 1, 5]))  # 4
     print(missing_number([1]))           # 2
     print(missing_number([]))            # 1
-    print(missing_number([1, 2, 4, 5]))   # 3
+    print(missing_number([1, 2, 4, 5]))  # 3
