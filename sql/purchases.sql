@@ -2,6 +2,21 @@
 -- Вывести ID клиентов, которые за последний месяц по всем своим счетам совершили покупок меньше, чем на 5000 рублей.
 -- Без использования подзапросов и оконных функций.
 
+CREATE TABLE account(
+    id integer,        -- ID счета
+    client_id integer, -- ID клиента
+    open_dt date,      -- дата открытия счета
+    close_dt date      -- дата закрытия счета
+);
+
+CREATE TABLE transaction(
+    id integer,            -- ID транзакции
+    account_id integer,    -- ID счета
+    transaction_date date, -- дата транзакции
+    amount numeric(10,2),  -- сумма транзакции
+    type varchar(3)        -- тип транзакции
+);
+
 -- Решение через JOIN + GROUP BY + HAVING
 SELECT DISTINCT a.client_id
 FROM account a
